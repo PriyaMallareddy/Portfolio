@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Siri Priya Katta | Software Engineer</title>
+
+    <meta name="description"
+          content="Portfolio of Siri Priya Katta — Software Engineer specializing in backend development, cloud-native systems, distributed applications, and AI.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        /* Navigation */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #e5e7eb;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #4b5563;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f8fafc, #eef4ff);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-label {
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 76px);
+            line-height: 1.05;
+            color: #111827;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 26px;
+            font-weight: 500;
+            color: #4b5563;
+            margin-bottom: 22px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 7px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #1d4ed8;
+        }
+
+        .secondary {
+            border: 1px solid #d1d5db;
+            background: white;
+            color: #374151;
+        }
+
+        .secondary:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #111827;
+            margin-top: 5px;
+        }
+
+        /* About */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            color: #4b5563;
+            font-size: 17px;
+        }
+
+        .about-card {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .about-card h3 {
+            margin-bottom: 15px;
+            color: #111827;
+        }
+
+        .about-card p {
+            color: #6b7280;
+        }
+
+        /* Skills */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            padding: 25px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+            color: #111827;
+            font-size: 18px;
+        }
+
+        .skill-card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* Experience */
+
+        .timeline {
+            border-left: 2px solid #dbeafe;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #2563eb;
+            border-radius: 50%;
+            position: absolute;
+            left: -37px;
+            top: 7px;
+        }
+
+        .timeline-item h3 {
+            color: #111827;
+            font-size: 21px;
+        }
+
+        .timeline-item .company {
+            color: #2563eb;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        .timeline-item .date {
+            color: #9ca3af;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .timeline-item p {
+            color: #6b7280;
+        }
+
+        /* Projects */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 28px;
+            transition: 0.25s;
+            background: white;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-number {
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .project-card h3 {
+            margin: 12px 0;
+            color: #111827;
+            font-size: 21px;
+        }
+
+        .project-card p {
+            color: #6b7280;
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+
+        .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .tech span {
+            background: #eff6ff;
+            color: #2563eb;
+            padding: 5px 9px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        /* Education */
+
+        .education-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            background: #f8fafc;
+        }
+
+        .education-card h3 {
+            font-size: 21px;
+            color: #111827;
+        }
+
+        .education-card p {
+            color: #6b7280;
+            margin-top: 5px;
+        }
+
+        /* Contact */
+
+        .contact {
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #d1d5db;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: white;
+            border: 1px solid #4b5563;
+            padding: 10px 18px;
+            border-radius: 6px;
+        }
+
+        .contact-links a:hover {
+            border-color: #93c5fd;
+            color: #93c5fd;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #0b1120;
+            color: #9ca3af;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 900px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 580px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+    <div class="container nav-container">
+        <div class="logo">SPK</div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- Hero -->
+
+<header class="hero">
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="hero-label">
+                SOFTWARE ENGINEER · CLOUD · BACKEND
+            </div>
+
+            <h1>Siri Priya Katta</h1>
+
+            <h2>
+                Building scalable cloud-native and distributed systems.
+            </h2>
+
+            <p>
+                Software Engineer with experience developing backend services,
+                RESTful APIs, microservices, and cloud-native applications.
+                Interested in scalable systems, distributed computing,
+                and AI-powered technologies.
+            </p>
+
+            <div class="buttons">
+                <a class="button primary" href="#projects">
+                    View Projects
+                </a>
+
+                <a class="button secondary"
+                   href="https://github.com/PriyaMallareddy"
+                   target="_blank">
+                    GitHub
+                </a>
+
+                <a class="button secondary"
+                   href="https://www.linkedin.com/"
+                   target="_blank">
+                    LinkedIn
+                </a>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+<!-- About -->
+
+<section id="about">
+    <div class="container">
+
+        <div class="section-title">
+            <span>About</span>
+            <h2>About Me</h2>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I am a Software Engineer focused on backend development,
+                    cloud-native applications, and distributed systems.
+                </p>
+
+                <p>
+                    My experience includes designing REST APIs,
+                    developing microservices, optimizing databases,
+                    building CI/CD pipelines, and working with
+                    Microsoft Azure and containerized applications.
+                </p>
+
+                <p>
+                    During my master's studies in Computer Science,
+                    I also worked on RAG and LLM-based systems,
+                    exploring AI agents and retrieval-augmented generation.
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <h3>What I enjoy building</h3>
+
+                <p>
+                    Scalable backend services, cloud-native architectures,
+                    distributed systems, data-intensive applications,
+                    developer tooling, and AI-powered applications.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Skills -->
+
+<section id="skills">
+    <div class="container">
+
+        <div class="section-title">
+            <span>Technical Skills</span>
+            <h2>Tools & Technologies</h2>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>Backend</h3>
+                <p>
+                    C#, .NET Core, Node.js, Python, Java,
+                    REST APIs, Microservices
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Cloud</h3>
+                <p>
+                    Microsoft Azure, Azure Functions,
+                    Azure App Service, AWS, Cloud-Native Development
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Databases</h3>
+                <p>
+                    SQL Server, Azure SQL, PostgreSQL,
+                    NoSQL, Redis, Entity Framework Core
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>DevOps</h3>
+                <p>
+                    Docker, Kubernetes, Azure DevOps,
+                    CI/CD, Git, Monitoring
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Experience -->
+
+<section id="experience">
+    <div class="container">
+
+        <div class="section-title">
+            <span>Experience</span>
+            <h2>Professional Experience</h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <h3>Software Engineer – Cloud & Services</h3>
+
+                <div class="company">
+                    Infosys
+                </div>
+
+                <div class="date">
+                    May 2025 – Present
+                </div>
+
+                <p>
+                    Developing scalable distributed microservices and
+                    RESTful APIs using C#, .NET Core, Node.js and Azure.
+                    Working on cloud-native systems, performance optimization,
+                    CI/CD pipelines, observability, and production reliability.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <h3>Software Engineer</h3>
+
+                <div class="company">
+                    TCS
+                </div>
+
+                <div class="date">
+                    June 2022 – June 2024
+                </div>
+
+                <p>
+                    Developed backend services and REST APIs using C# and .NET,
+                    optimized SQL Server databases, worked with microservices
+                    and Docker, and contributed to frontend applications
+                    using Angular and TypeScript.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Projects -->
+
+<section id="projects">
+    <div class="container">
+
+        <div class="section-title">
+            <span>Projects</span>
+            <h2>Featured Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <h3>
+                    Adaptive Resilience Platform
+                    for Microservices
+                </h3>
+
+                <p>
+                    A cloud-native observability and self-healing platform
+                    designed to detect anomalies and support automated
+                    remediation across microservices.
+                </p>
+
+                <div class="tech">
+                    <span>Azure</span>
+                    <span>Application Insights</span>
+                    <span>KQL</span>
+                    <span>Azure Functions</span>
+                    <span>REST APIs</span>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <h3>
+                    Multi-Service Deployment
+                    Orchestration Framework
+                </h3>
+
+                <p>
+                    A microservices coordination platform integrating
+                    multiple services into an order-processing workflow
+                    using event-driven architecture.
+                </p>
+
+                <div class="tech">
+                    <span>.NET Core</span>
+                    <span>REST APIs</span>
+                    <span>Azure Service Bus</span>
+                    <span>Angular</span>
+                    <span>CQRS</span>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    03
+                </div>
+
+                <h3>
+                    Serverless Commerce
+                    Processing Engine
+                </h3>
+
+                <p>
+                    A serverless order-processing architecture using
+                    Azure Functions, NoSQL data modeling and automated
+                    Azure DevOps deployment pipelines.
+                </p>
+
+                <div class="tech">
+                    <span>Azure Functions</span>
+                    <span>Cosmos DB</span>
+                    <span>Angular</span>
+                    <span>TypeScript</span>
+                    <span>CI/CD</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Education -->
+
+<section id="education">
+    <div class="container">
+
+        <div class="section-title">
+            <span>Education</span>
+            <h2>Academic Background</h2>
+        </div>
+
+        <div class="education-card">
+
+            <h3>
+                Master of Science in Computer Science
+            </h3>
+
+            <p>
+                Southern Illinois University Carbondale
+            </p>
+
+            <p>
+                August 2024 – May 2026
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Contact -->
+
+<section id="contact" class="contact">
+
+    <div class="container">
+
+        <h2>Let's Connect</h2>
+
+        <p>
+            Interested in software engineering, cloud systems,
+            backend development, or AI technologies?
+        </p>
+
+        <div class="contact-links">
+
+            <a href="mailto:siripriyakatta0609@gmail.com">
+                Email
+            </a>
+
+            <a href="https://github.com/PriyaMallareddy"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/"
+               target="_blank">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+    © 2026 Siri Priya Katta. All rights reserved.
+</footer>
+
+</body>
+</html>
